@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LinkedListClass()
+comment1.params=element
+comment1.target=void\ addFirst(java.lang.Object)
+comment2.params=
+comment2.target=java.lang.Object\ getFirst()
+comment3.params=
+comment3.target=java.lang.Object\ removeFirst()
+numComments=4
