@@ -6,7 +6,10 @@ public class TestDataStruc
         LinkedListClass list = new LinkedListClass();
         
         String word = "Hello";
+        String word2;
         
         list.addFirst(word);
+        word2 = (String)list.getFirst();
+        System.out.println(word2);
     }
 }
