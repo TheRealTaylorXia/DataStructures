@@ -3,6 +3,7 @@ import java.util.*;
 public class LinkedListClass
 {
     private Node first;
+    private int currentSize = 0;
     
     
     class Node
@@ -22,6 +23,7 @@ public class LinkedListClass
         newNode.data = element;
         newNode.next = first;
         first = newNode;
+        currentSize++;
         
     }
     
@@ -41,8 +43,32 @@ public class LinkedListClass
         {
             Object temp = first.data;
             first = first.next;
+            currentSize--;
             return temp;
         }
+    }
+    
+    public int size()
+    {
+        return currentSize;
+    }
+    
+    private static Node getNode(int n)
+    {
+        for (int i=0; i<=n; i++)
+        {
+            first = first.next;
+        }
+    }
+    
+    public Object get(int n)
+    {
+        
+    }
+    
+    public void set(int n, Object newElement)
+    {
+        
     }
     
     public ListIterator listIterator()
@@ -82,19 +108,25 @@ public class LinkedListClass
             }
         }
         
+        /*
         public boolean hasNext()
         {
             if (position == null)
                 return first != null;
             else
                 return position.next != null;
+        }*/
+        
+        public boolean hasNext()
+        {
+            return position != null;
         }
                 
         public void add(Object element)
         {
             if (position == null)
             {
-                first = element;
+                first.data = element;
             }
             else
             {
@@ -104,8 +136,8 @@ public class LinkedListClass
                 position.next = newNode;
                 position = newNode;
             }
-            
-            ifAfterNext = false;
+            currentSize++;
+            isAfterNext = false;
         }
                 
         public void remove(Object element)
@@ -119,6 +151,7 @@ public class LinkedListClass
                 previous.next = position.next;
             }
             position = previous;
+            currentSize--;
             isAfterNext = false;
         }
     }

@@ -3,13 +3,19 @@ public class TestDataStruc
 {
     public static void main(String[] args)
     {
-        LinkedListClass list = new LinkedListClass();
+        CircularArrayQueue circle = new CircularArrayQueue();
         
-        String word = "Hello";
-        String word2;
+        circle.add("Tom");
+        circle.add("Diana");
+        circle.add("Harry");
+        circle.add("Bart");
         
-        list.addFirst(word);
-        word2 = (String)list.getFirst();
-        System.out.println(word2);
+        circle.firstToLast();
+        circle.lastToFirst();
+        
+        while (circle.empty() != true)
+        {
+            System.out.print(circle.remove());
+        }
     }
 }
